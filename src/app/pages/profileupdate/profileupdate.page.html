@@ -1,0 +1,60 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile Update</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row >
+      <ion-col class="align-self-center">
+        <form #form="ngForm" (ngSubmit)="update(form)" method="post">
+          <div class="ion-padding">
+            <ion-item no-lines color="light" *ngIf="name">
+              <ion-icon name="person" slot="start" color="primary"></ion-icon>
+              <ion-input [(ngModel)]="nameform.form" type="text" name="name" placeholder="Full Name" autocapitalize></ion-input>
+            </ion-item>
+            <br>
+            <ion-item  no-lines color="light" *ngIf="email">
+              <ion-icon name="mail" slot="start" color="primary"></ion-icon>
+              <ion-input [(ngModel)]="emailform.form" type="email" name="email" placeholder="Email" disabled="true" autocapitalize></ion-input>
+            </ion-item>
+            <br>
+
+            <ion-item  no-lines color="light" *ngIf="phonenumber">
+              <ion-icon name="call" slot="start" color="primary"></ion-icon>
+              <ion-input [(ngModel)]="phonenumberform.form" type="number" name="phonenumber" placeholder="Phone Number" autocapitalize></ion-input>
+            </ion-item>
+            <br>
+
+         
+              <ion-select color="light" placeholder="Choose Gender" name="gender" (ionChange)="checkValueGender($event)"
+              [(ngModel)]="genderform.form" *ngIf="gender">
+              <ion-select-option value="Male">Male</ion-select-option>
+              <ion-select-option value="Female">Female</ion-select-option>
+            </ion-select>
+             
+            <br>
+
+            
+        
+              <ion-select color="light" placeholder="Choose Race" name="race" (ionChange)="checkValueRace($event)"
+              [(ngModel)]="raceform.form" *ngIf="race">
+              <ion-select-option value="Malay">Malay</ion-select-option>
+              <ion-select-option value="Chinese">Chinese</ion-select-option>
+              <ion-select-option value="Indian">Indian</ion-select-option>
+              <ion-select-option value="Other">Other</ion-select-option>
+            </ion-select>
+            <br>
+          </div>
+          <div class="ion-padding">
+            <ion-button size="large" type="submit" expand="block">Update Profile</ion-button>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

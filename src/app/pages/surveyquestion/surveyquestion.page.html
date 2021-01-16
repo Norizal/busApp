@@ -1,0 +1,32 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Survey Question</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <ion-card *ngFor="let question of questions; let i=index;" color="light">
+        <ion-card-header>
+          <ion-card-subtitle>Soalan {{i+1}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <label>{{question.questions}}</label>
+  
+            <ion-select placeholder="Pilih Skala" (ionChange)="checkValue($event, i, question.id)">
+                <ion-select-option value="1">Paling Tidak Setuju</ion-select-option>
+                <ion-select-option value="2">Tidak Setuju</ion-select-option>
+                <ion-select-option value="3">Sederhana</ion-select-option>
+                <ion-select-option value="4">Setuju</ion-select-option>
+                <ion-select-option value="5">Paling Setuju</ion-select-option>
+                </ion-select>
+        </ion-card-content>
+      </ion-card>
+
+      <div class="ion-padding">
+          <ion-button size="large" type="submit" expand="block" (click)="submitSurvey()">Submit</ion-button>
+      </div>
+
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-subtitle>Bus Monitoring System</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card>
+        <ion-card-header>
+            <ion-card-title>Profile</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <label *ngIf="name"> Name: <b>{{this.name}}</b><br> </label>
+            <label *ngIf="email"> Email: <b>{{this.email}}</b><br> </label>
+            <label *ngIf="phonenumber"> Phone Number: <b>{{this.phonenumber}}</b><br> </label>
+            <label *ngIf="gender"> Gender: <b>{{this.gender}}</b><br> </label>
+            <label *ngIf="race"> Race: <b>{{this.race}}</b><br> </label>
+        </ion-card-content>
+      </ion-card>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button color="primary"  type="submit" (click)="update()"
+          expand="full">Update Profile</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-button  color="primary" fill="clear" expand="block" (click)="updatePassword()">Update Password</ion-button>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

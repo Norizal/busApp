@@ -1,0 +1,7 @@
+{
+  "name": "busTracker",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

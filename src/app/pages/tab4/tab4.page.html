@@ -1,0 +1,40 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>Others</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+    <ion-content>
+        <ion-grid class="ion-padding">
+        <ion-item lines="none" (click)="logout()" color="light">
+          <ion-label>Log Out</ion-label>
+          <ion-icon name="arrow-forward" slot="end"></ion-icon>
+        </ion-item>
+        <br>
+        <br>
+        <div class="ion-padding-bottom">
+            <ion-item lines="none" color="light" (click)="detail()">
+                <ion-label>Profile</ion-label>
+                <ion-icon name="arrow-forward" slot="end"></ion-icon>
+              </ion-item>
+
+        </div>
+        <div class="ion-padding-bottom">
+            <ion-item lines="none" color="light" (click)="about()">
+                <ion-label>About Bus Monitoring</ion-label>
+                <ion-icon name="arrow-forward" slot="end"></ion-icon>
+            </ion-item>
+        </div>
+      
+        <div class="ion-padding-bottom">
+        <ion-item lines="none" color="light" (click)="contact()">
+            <ion-label>Contact Us</ion-label>
+            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+        </ion-item>
+      </div>
+      </ion-grid>
+      
+      </ion-content>
+
+
+

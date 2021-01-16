@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>History Answer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-list *ngIf="historyData">
+
+      <ion-item color="light"  *ngFor="let item of historyData">
+       <ion-label>
+          <h4>Organization: <b>{{item.organizationName}}</b></h4>
+          <h4>Driver: <b>{{item.driverName}}</b></h4>
+          <p class="date">Trip From: {{item.tripTo}}</p>
+          <p class="date">Trip Start: {{item.tripStartTime | date:'h:mm:a dd/M/yy' }}</p>
+       </ion-label>
+       <ion-chip slot="end" outline color="primary" (click)="viewInfo(item)">
+        <ion-label>View</ion-label>
+      </ion-chip>
+     </ion-item>
+   </ion-list>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-content>  
+    <ion-grid>
+         <ion-row class="ion-justify-content-center">
+           <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+             <div class="ion-text-center">
+              <img src="../../assets/logo.png"/>
+             </div>
+             <form #form="ngForm" (ngSubmit)="login(form)" method="post">
+             <div class="ion-padding">
+               <ion-item  no-lines color="light" >
+                  <ion-icon name="mail" slot="start" color="primary"></ion-icon>
+                <ion-input [(ngModel)]="email.form" type="email" name="email" placeholder="Email"></ion-input>
+               </ion-item>
+               <br>
+               <ion-item no-lines color="light">
+                   <ion-icon name="key" slot="start" color="primary"></ion-icon>
+                   <ion-input  type="{{type}}" name="password" [(ngModel)]="password.form" placeholder="Password" style="width: 40px;" no-lines>
+                   </ion-input>
+                   <ion-button *ngIf="!showPass" fill="clear" color="light" type="button" item-right (click)="showPassword()"> 
+                      <ion-icon color="primary" name="eye" style="font-size:25px;"></ion-icon>
+                   </ion-button>
+                   <ion-button *ngIf="showPass" fill="clear" color="light" type="button" item-right (click)="showPassword()"> 
+                      <ion-icon color="primary" name="eye-off" style="font-size:25px;"></ion-icon>
+                   </ion-button>
+                </ion-item>
+             </div>
+             <div class="ion-padding">
+               <ion-button size="large" type="submit" expand="block">Login</ion-button>
+             </div>
+            </form>
+             <ion-button  color="primary" fill="clear" expand="block" (click)="register()">Register</ion-button>
+           </ion-col>
+         </ion-row>
+       </ion-grid>
+
+       
+  </ion-content>
+  
+  
